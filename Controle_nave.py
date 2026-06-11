@@ -10,7 +10,6 @@ def viajar():
     else:
         print("Você esta sem combustivel suficiente. Abasteça!")
 
-
 def abastecer():
     global combustivel
     print("--------------------------- ABASTECIMENTO ------------------------------")
@@ -28,9 +27,13 @@ def registrarTripulantes():
     tripulantes.append(novoTripulante)
     print("Tripulante inserido com secesso!🚀🚀🚀")
 
+def retirarTripulante():
+    tripulantes.pop()
+    print("Tripulante removido")
+
 while True:
     print("\nBem vindo ao menu interrativo da nave. Por favor selecione uma opção")
-    print("\n1- Mostrar status da nave | 2- Viajar | 3- Abastecer | 4- Novo tripulante | 5- Sair")
+    print("\n1- Mostrar status da nave | 2- Viajar | 3- Abastecer | 4- Novo tripulante | 5- Remover o ultimo tripulante | 6- Sair")
     opcao = input("Escolha:" )
     if (opcao == "1"):
         status_nave()
@@ -41,5 +44,10 @@ while True:
     elif(opcao == "4"):
         registrarTripulantes()
     elif(opcao == "5"):
+        if len(tripulantes) == 0:
+            print("ERRO!!!\n" \
+            "Adicione um tripulate")
+        else:
+            retirarTripulante()
+    elif(opcao == "6"):
         break
-    
