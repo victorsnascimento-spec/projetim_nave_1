@@ -1,46 +1,60 @@
 combustivel = 100
 tripulantes = []
 
+def travarMenu():
+    input("Pressione <ENTER> para continuar...")
+
 def viajar():
     global combustivel
-    print("---------------------------STATUS DA GASOLINA------------------------------")
+    print("--------------------------- STATUS DA GASOLINA ---------------------------")
     if (combustivel >= 30):
         combustivel = combustivel - 30
         print("A nave viajou🛫🛫🛫")
     else:
         print("Você esta sem combustivel suficiente. Abasteça!")
 
+    travarMenu()
+    
 def abastecer():
     global combustivel
-    print("--------------------------- ABASTECIMENTO ------------------------------")
+    print("--------------------------- ABASTECIMENTO ---------------------------")
     combustivel = 100
     print("O tanque esta cheio⛽⛽⛽")
+    print("------------------------------------------------------")
+
+    travarMenu()
 
 def status_nave():
-    print("--------------------------- STATUS DA NAVE ------------------------------")
+    print("--------------------------- STATUS DA NAVE ---------------------------")
     print(f"O combustivel é {combustivel}")
     print(f"Os tripulantes são {tripulantes}")
+    print("------------------------------------------------------")
+
+    travarMenu()
 
 def registrarTripulantes():
-    print("--------------------------- STATUS TRIPULANTES ------------------------------")
+    print("--------------------------- STATUS TRIPULANTES ---------------------------")
     novoTripulante = input("Qual o nome do novo tripulantes? ")
     tripulantes.append(novoTripulante)
     print("Tripulante inserido com secesso!🚀🚀🚀")
-
+    print("------------------------------------------------------")
+    travarMenu()
 def retirarTripulante():
     tripulantes.pop()
     print("Tripulante removido")
 
+    travarMenu()
+
 while True:
     print("\nBem vindo ao menu interrativo da nave. Por favor selecione uma opção")
-    print("\n1- Mostrar status da nave | 2- Viajar | 3- Abastecer | 4- Novo tripulante | 5- Remover o ultimo tripulante | 6- Sair")
+    print("\n1- Mostrar status da nave | 2- Viajar | 3- Abastecer | 4- Novo tripulante | 5- Remover o ultimo tripulante | 6- Sair\n")
     opcao = input("Escolha:" )
     if (opcao == "1"):
         status_nave()
     elif(opcao == "2"):
         if (len(tripulantes)== 0):
-            print("ERRO ⚠️⚠️⚠️\n")
-            print("Não há tripulantes")
+            print("ERRO ⚠️⚠️⚠️")
+            print("Não há tripulantes!!!")
             i = input("Dejesa adicionar um tripulante? (s/n)")
             if i == "s":
                  registrarTripulantes
@@ -52,7 +66,8 @@ while True:
         registrarTripulantes()
     elif(opcao == "5"):
         if len(tripulantes) == 0:
-            print("ERRO ⚠️⚠️⚠️\n")
+            print("ERRO ⚠️⚠️⚠️")
+            print("Não há tripulantes!!!")
             i = input("Dejesa adicionar um tripulante? (s/n)")
             if i == "s":
                 registrarTripulantes
