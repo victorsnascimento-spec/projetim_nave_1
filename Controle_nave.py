@@ -38,7 +38,14 @@ while True:
     if (opcao == "1"):
         status_nave()
     elif(opcao == "2"):
-        viajar()
+        if (len(tripulantes)== 0):
+            print("ERRO ⚠️⚠️⚠️\n")
+            print("Não há tripulantes")
+            i = input("Dejesa adicionar um tripulante? (s/n)")
+            if i == "s":
+                 registrarTripulantes
+        else:
+            viajar()
     elif(opcao == "3"):
         abastecer()
     elif(opcao == "4"):
