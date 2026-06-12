@@ -39,16 +39,17 @@ def registrarTripulantes():
     print("Tripulante inserido com secesso!🚀🚀🚀")
     print("------------------------------------------------------")
     travarMenu()
+
 def retirarTripulante():
     tripulantes.pop()
-    print("Tripulante removido")
+    print("Tripulante removido com sucesso!🚀🚀🚀")
 
     travarMenu()
 
 while True:
-    print("\nBem vindo ao menu interrativo da nave. Por favor selecione uma opção")
+    print("\n--------------------------- MENU DA NAVE ---------------------------")
     print("\n1- Mostrar status da nave | 2- Viajar | 3- Abastecer | 4- Novo tripulante | 5- Remover o ultimo tripulante | 6- Sair\n")
-    opcao = input("Escolha:" )
+    opcao = input("Escolha a opção que dejasa fazer:" )
     if (opcao == "1"):
         status_nave()
     elif(opcao == "2"):
