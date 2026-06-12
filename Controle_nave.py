@@ -41,7 +41,8 @@ def registrarTripulantes():
     travarMenu()
 
 def retirarTripulante():
-    tripulantes.pop()
+    i = int(input("Qual tripulante deseja remover(Lembrando, a sequência começa com 0)? "))
+    tripulantes.pop(i)
     print("Tripulante removido com sucesso!🚀🚀🚀")
 
     travarMenu()
