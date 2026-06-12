@@ -45,8 +45,10 @@ while True:
         registrarTripulantes()
     elif(opcao == "5"):
         if len(tripulantes) == 0:
-            print("ERRO!!!\n" \
-            "Adicione um tripulate")
+            print("ERRO ⚠️⚠️⚠️\n")
+            i = input("Dejesa adicionar um tripulante? (s/n)")
+            if i == "s":
+                registrarTripulantes
         else:
             retirarTripulante()
     elif(opcao == "6"):
